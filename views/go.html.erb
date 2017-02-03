@@ -6,8 +6,13 @@
     <h3>Redirecting...</h3>
     <form action="<%= @sp_url %>" method="POST">
       <textarea name="SAMLResponse"><%= @saml_response %></textarea>
+      <input type="text" name="RelayState" value="<%= @relay_state %>" />
       <br /><br />
       <input type="submit" />
     </form>
+    <script type="text/javascript">
+      // auto-submit the form above
+      document.forms[0].submit()
+    </script>
   </body>
 </html>

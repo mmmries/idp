@@ -3,6 +3,10 @@
     <title>Idp Tester</title>
     <style>
       input { width: 500px; }
+      span.code {
+        font-family: monospace;
+        background-color: lightgrey;
+      }
     </style>
   </head>
   <body>
@@ -11,8 +15,44 @@
       <input type="text" name="name_id" placeholder="The nameID you want to send" />
       <br />
       <input type="text" name="sp_url" placeholder="The URL you want to send to" />
-      <br /><br />
+      <br />
+      <input type="text" name="relay_state" placeholder="Relay State (optional)" />
+      <br /><br /><br />
       <input type="submit" />
     </form>
-  </body>
+
+    <h1>How To Use This</h1>
+    <p>
+      This tool is intended to be a generic way to test identity-provider initiated SAML authentication.  To make use of this tool you just need to configure your application to accept our certificate (see below).  Then from this page enter the URL endpoint of your service provider and a NameID you want to pass. You can also optionally provide a RelayState which will be passed along with the request.
+    </p>
+
+    <h2>Our Certificate</h2>
+      <p>This tool uses a pre-created certificated to minimize how much you have to do to test.</p>
+      <p>If you need to enter a fingerprint for the certificate you can enter <span class="code">22:93:3C:28:17:95:EC:DA:39:37:22:1E:E9:12:8C:B1:6C:13:D8:B8:9C:8F:1E:5D:DC:FE:EA:29:F9:85:A4:F8</span> and then enter <span class="code">http://www.w3.org/2001/04/xmldsig-more#rsa-sha256</span> as the fingerprint algorithm.</p>
+
+    <pre>
+-----BEGIN CERTIFICATE-----
+MIIDqzCCAxSgAwIBAgIBATANBgkqhkiG9w0BAQsFADCBhjELMAkGA1UEBhMCQVUx
+DDAKBgNVBAgTA05TVzEPMA0GA1UEBxMGU3lkbmV5MQwwCgYDVQQKDANQSVQxCTAH
+BgNVBAsMADEYMBYGA1UEAwwPbGF3cmVuY2VwaXQuY29tMSUwIwYJKoZIhvcNAQkB
+DBZsYXdyZW5jZS5waXRAZ21haWwuY29tMB4XDTEyMDQyODAyMjIyOFoXDTMyMDQy
+MzAyMjIyOFowgYYxCzAJBgNVBAYTAkFVMQwwCgYDVQQIEwNOU1cxDzANBgNVBAcT
+BlN5ZG5leTEMMAoGA1UECgwDUElUMQkwBwYDVQQLDAAxGDAWBgNVBAMMD2xhd3Jl
+bmNlcGl0LmNvbTElMCMGCSqGSIb3DQEJAQwWbGF3cmVuY2UucGl0QGdtYWlsLmNv
+bTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAuBywPNlC1FopGLYfF96SotiK
+8Nj6/nW084O4omRMifzy7x955RLEy673q2aiJNB3LvE6Xvkt9cGtxtNoOXw1g2Uv
+HKpldQbr6bOEjLNeDNW7j0ob+JrRvAUOK9CRgdyw5MC6lwqVQQ5C1DnaT/2fSBFj
+asBFTR24dEpfTy8HfKECAwEAAaOCASUwggEhMAkGA1UdEwQCMAAwCwYDVR0PBAQD
+AgUgMB0GA1UdDgQWBBQNBGmmt3ytKpcJaBaYNbnyU2xkazATBgNVHSUEDDAKBggr
+BgEFBQcDATAdBglghkgBhvhCAQ0EEBYOVGVzdCBYNTA5IGNlcnQwgbMGA1UdIwSB
+qzCBqIAUDQRpprd8rSqXCWgWmDW58lNsZGuhgYykgYkwgYYxCzAJBgNVBAYTAkFV
+MQwwCgYDVQQIEwNOU1cxDzANBgNVBAcTBlN5ZG5leTEMMAoGA1UECgwDUElUMQkw
+BwYDVQQLDAAxGDAWBgNVBAMMD2xhd3JlbmNlcGl0LmNvbTElMCMGCSqGSIb3DQEJ
+AQwWbGF3cmVuY2UucGl0QGdtYWlsLmNvbYIBATANBgkqhkiG9w0BAQsFAAOBgQAE
+cVUPBX7uZmzqZJfy+tUPOT5ImNQj8VE2lerhnFjnGPHmHIqhpzgnwHQujJfs/a30
+9Wm5qwcCaC1eO5cWjcG0x3OjdllsgYDatl5GAumtBx8J3NhWRqNUgitCIkQlxHIw
+UfgQaCushYgDDL5YbIQa++egCgpIZ+T0Dj5oRew//A==
+-----END CERTIFICATE-----
+    </pre>
+  </body> 
 </html>

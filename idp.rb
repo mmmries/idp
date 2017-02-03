@@ -22,6 +22,7 @@ end
 post "/go" do
   name_id = params["name_id"]
   @sp_url = params["sp_url"]
+  @relay_state = params["relay_state"]
   response_generator = ::ResponseGenerator.new(@sp_url)
   @saml_response = response_generator.saml_response(name_id)
   erb :"go.html"

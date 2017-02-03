@@ -4,10 +4,6 @@ This is a tiny project that aims to be an easy way to test SAML service provider
 
 For easiest testing please configure your service provider to use the `my_certificate.cer` file as the certificate.
 
-__If you want to use a SHA1 fingerprint__
-Enter `9E:65:2E:03:06:8D:80:F2:86:C7:6C:77:A1:D9:14:97:0A:4D:F4:4D` as the fingerprint.
-If you need to specify the hashing algorithm use `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
-
 __If you want to use a SHA256 fingerprint__
 Enter `22:93:3C:28:17:95:EC:DA:39:37:22:1E:E9:12:8C:B1:6C:13:D8:B8:9C:8F:1E:5D:DC:FE:EA:29:F9:85:A4:F8` as the fingerprint.
 If you need to specify the hashing algorithm use `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
