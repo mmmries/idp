@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Idp Forward</title>
+  </head>
+  <body>
+    <h3>Redirecting...</h3>
+    <form action="<%= @sp_url %>" method="POST">
+      <textarea name="SAMLResponse"><%= @saml_response %></textarea>
+      <br /><br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
