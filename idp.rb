@@ -1,6 +1,7 @@
 require "bundler/setup"
 require "sinatra"
 require "ruby-saml-idp"
+require "base64"
 
 class ResponseGenerator
   include ::SamlIdp::Controller
@@ -24,6 +25,10 @@ post "/go" do
   @sp_url = params["sp_url"]
   @relay_state = params["relay_state"]
   response_generator = ::ResponseGenerator.new(@sp_url)
+
+  response_generator.secret_key = params["secret_key"] if !params["secret_key"].empty?
+  response_generator.x509_certificate = Base64.encode64(params["certificate"]) if !params["certificate"].empty?
+
   @saml_response = response_generator.saml_response(name_id)
   erb :"go.html"
 end
