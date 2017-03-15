@@ -6,7 +6,7 @@
     <h3>Redirecting...</h3>
     <form action="<%= @sp_url %>" method="POST">
       <textarea name="SAMLResponse"><%= @saml_response %></textarea>
-      <input type="text" name="RelayState" value="<%= @relay_state %>" />
+      <textarea name="RelayState"><%= @relay_state %></textarea>
       <br /><br />
       <input type="submit" />
     </form>
